@@ -1,0 +1,76 @@
+<div class="  sidebarnav bg-gradient-to-t bg-purple-900 z-10  left-0  lg:visible invisible py-5">
+    <div class="logo w-50 mx-auto mb-4">
+        <a routerLink="/dashboard">
+            <img src="/images/logo-white.png" alt="Logo" class="max-w-full border-1 mx-auto rounded-full drop-shadow "
+                width="50" />
+        </a>
+    </div>
+    <div class="  py-3 togllefull text-center" (click)="handleClick()">
+        <i class="fa fa-bars text-2xl lg:block hidden"></i>
+        <i class="fa fa-close text-3xl lg:hidden block"></i>
+    </div>
+    <!-- <ul [ngClass]="{'sidebarulOpen':click,'sidebarul':!click}"> -->
+    <ul [class.sidebarulOpen]="click" [class.sidebarul]="!click">
+        <li title="Dashboard">
+            <a routerLink="/dashboard" class="p-3   pl-4 flex items-center  hover: text-3xl dark:bg-blue-900">
+                <i class="fa fa-tachometer   w-8 "></i>
+                <span class="text-base ml-2" title="Dashboard" data-tooltip-target="tooltip-default">
+                    Dashboard
+                </span>
+            </a>
+        </li>
+
+        <!-- <>
+                        <li onClick={handleDrop}>
+                            <div class={dropclick ? "dropdownOpen" : "dropdown"}>
+                                <div
+                                    title="Roles"
+                                    class="p-3 pl-4 flex rounded  datatoggle  relative items-center   text-2xl  hover: dark:text-gray-300  "
+                                >
+                                    <i>
+                                        <img src="/images/roles.png" alt={"role"}/>
+                                    </i>
+                                    <span class="text-base ">Roles</span>
+
+                                    <i class="fa fa-angle-right"/>
+                                </div>
+                                <ul class="slidecontent " style={{display: "none"}}>
+                                    <li>
+                                        <a to={"/role/add"}>
+                                            Add Role
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href={"/role/list"}>
+                                            Role List
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                       
+                    </> -->
+
+        <li>
+            <a routerLink="/service" title="Announcements"
+                class="p-3 pl-4 flex rounded items-center   hover: dark:text-gray-300 text-2xl">
+                <i class="fa fa-bullhorn"> </i>
+                <span class="text-base ">Service </span>
+            </a>
+        </li>
+
+        <!-- <li onClick={() => dispatch(logoutUserAction())}>
+                    <a
+                        title="Logout"
+                        to={"#"}
+                        class="p-3 pl-4 flex rounded items-center   hover: dark:text-gray-300 text-2xl"
+                    >
+                        <i class="fa fa-sign-in   "/>{" "}
+                        <span class="text-base ">Logout</span>
+                    </a>
+                </li> -->
+    </ul>
+    <div class="my-3 togllemin text-center" title="">
+        <i class="fa fa-arrow-left text-2xl"></i>
+    </div>
+</div>

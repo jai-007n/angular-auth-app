@@ -1,0 +1,99 @@
+<header class="bg-white border border-b	">
+    <div class="flex justify-right items-center ">
+        <div class="logo w-20 lg:hidden block ">
+            <a to="/dashboard">
+                {{" "}}
+                <img src="/images/logoHand.png" alt="Logo"
+                    class="max-w-full mx-auto border-1 rounded-full drop-shadow w-12 " />
+            </a>
+        </div>
+        <div class="nav w-full">
+            <ul class="flex justify-end items-center pr-5  ">
+                <li class="lg:hidden visible">
+                    <button class="togglemenmob mr-5 text-2xl text-purple-500 ">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <div
+                        class=" overflow-auto z-50 sidebar overflow-auto border-r shadow-2xl p-4 pt-16 bg-white border fixed top-0 -left-full h-screen w-60  ">
+                        <a routerLink="/"
+                            class="togglemenumob right-2 top-2 p-2 absolute text-gray-800 bg-gray-200 rounded-full ">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor"></svg>
+                        </a>
+                        <ul>
+                            <li>
+                                <a routerLink="/dashboard"
+                                    class="p-3  rounded-lg pl-4 flex items-center text-gray-500  hover:bg-blue-400 hover:text-white text-2xl mb-3 dark:bg-blue-900">
+                                    <i class="fa fa-home w-9 ">{{" "}} </i>
+                                    <span class="text-base ">Dashboard</span>
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <a routerLink="/profile"
+                                    class="p-3 pl-4 flex rounded items-center text-gray-500  hover:bg-blue-400 hover:text-white dark:text-gray-300 mb-3 text-2xl">
+                                    <i class="fa fa-cog w-9 "></i>
+                                    <span class="text-base ">Settings</span>
+                                </a>
+                            </li>
+                            <li>
+                                <button class="border p-1 px-3 rounded text-sm bg-white">
+                                    <i class="fa fa-sign-out mr-2 "></i>
+                                    Logout
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="dropdown relative z-30">
+                        <div class=" text-black dark:text-white block datatoggle py-2">
+                            <img src="/images/logoHand.png" alt="Logo"
+                                class="shadow-lg border md:w-8 w-8 bg-white rounded-full  border-white  " />
+                        </div>
+                        <div style="display:none"
+                            class="slidecontent dropdown-menu absolute right-0 w-72 top-100 text-gray-400 bg-white border-t shadow-md  dark:bg-gray-500">
+                            <div class="flex p-5">
+                                <div class="profileImg mr-5">
+                                    <img src="/images/logoHand.png" alt="Logo"
+                                        class="shadow-lg border md:w-15 w-12 bg-white rounded-full  border-white  " />
+                                </div>
+                                <div class="profileContent text-left">
+                                    <h3 class="text-gray-600 ">
+                                        {{ userName ? userName.first_name : "N/A" }}!
+                                    </h3>
+                                    <h5 class="text-sm">RightHands</h5>
+                                </div>
+                            </div>
+                            <div class="flex  border-t items-center  p-2 bg-gray ">
+                                <a routerLink="/profile">
+                                    <button class=" p-1 px-3 rounded text-left text-md ">
+                                        <i class="fa fa-user mr-2 text-purple-500"></i>
+                                        Profile
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="flex border-t items-center bg-gray p-2 ">
+                                <a routerLink="/setting">
+                                    <button class=" p-1 px-3 rounded text-md text-left ">
+                                        <i class="fa fa-cog mr-2 text-purple-500"></i>
+                                        Settings
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="flex  border-t items-center bg-gray p-2">
+                                <button onClick="" class=" p-1 px-3 rounded text-md text-left ">
+                                    <i class="fa fa-sign-out mr-2 text-purple-500" ></i>
+                                    Logout
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>

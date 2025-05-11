@@ -1,20 +1,31 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms'; // Import FormsModule
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // Import FormsModule
 import { CommonModule } from '@angular/common';
 
-import { provideHttpClient  } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
+// import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { LoginComponent } from './components/login/login/login.component';
+import { HeaderComponent } from './layout/header/header/header.component';
+import { SidebarComponent } from './layout/sidebar/sidebar/sidebar.component';
+import { FooterComponent } from './layout/footer/footer/footer.component';
+import { LayoutComponent } from './layout/layout/layout.component';
+import { ServiceComponent } from './admin/service/service.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
-    
+    DashboardComponent,
+    LoginComponent,
+    HeaderComponent,
+    SidebarComponent,
+    FooterComponent,
+    LayoutComponent,
+    ServiceComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,10 +33,9 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
     ReactiveFormsModule,
     AppRoutingModule,
     CommonModule,
-    LoginComponent,
-    
+
   ],
-  providers: [provideHttpClient() ],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
