@@ -2,7 +2,7 @@ import { NgFor, NgIf } from '@angular/common';
 import { Component ,Inject,OnInit } from '@angular/core';
 import { ReactiveFormsModule,FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../service/auth.service';
 @Component({
   selector: 'app-login-test',
   imports: [NgIf,ReactiveFormsModule],

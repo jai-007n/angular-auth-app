@@ -2,7 +2,7 @@ import { NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../../../auth.service';
+import { AuthService } from '../../../service/auth.service';
 import { CommonHelperService } from '../../../helpers/common-helper.service';
 
 
@@ -23,13 +23,13 @@ export class LoginComponent {
     });
   }
   ngOnInit(): void {
+    
   }
   onSubmit() {
     if (this.loginForm.valid) {
       console.log('Form submitted', this.loginForm.value);
       let credentials = this.loginForm.value;
       this.authService.login(credentials).subscribe({
-
         next: () => {
           // Handle successful login
           this.router.navigate(['/dashboard']);

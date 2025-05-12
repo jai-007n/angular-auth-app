@@ -1,12 +1,12 @@
 // auth.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 interface AuthResponse {
   token: string;
-  user:Object
+  user: Object
 }
 
 @Injectable({
@@ -18,8 +18,12 @@ export class AuthService {
   public isLoggedIn$ = this.isLoggedInSubject.asObservable();
 
   constructor(private http: HttpClient) {
-    const token = localStorage.getItem('token');
+    const token = localStorage?.getItem('token');
     this.isLoggedInSubject.next(!!token);
+  }
+
+  isAuthenticatedUser(): any {
+    return this.isLoggedInSubject.value;
   }
 
   register(user: any): Observable<AuthResponse> {
@@ -50,16 +54,10 @@ export class AuthService {
   }
 
   getProfile(): Observable<any> {
-    const token = localStorage.getItem('token');
-    return this.http.get(`${this.apiUrl}/profile`, {
-      headers: { 'Authorization': `Bearer ${token}` }
-    });
+    return this.http.get(`${this.apiUrl}/auth/profile`);
   }
 
   getAdmin(): Observable<any> {
-    const token = localStorage.getItem('token');
-    return this.http.get(`${this.apiUrl}/admin`, {
-      headers: { 'Authorization': `Bearer ${token}` }
-    });
+    return this.http.get(`${this.apiUrl}/admin`);
   }
 }
